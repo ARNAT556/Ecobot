@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ecobot</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+<h1 style="text-align: center;">Добро пожаловать в Ecobot</h1>
+
+<p>Бот:Привет, я бот который ответит на простые вопросы о экологии</p>
+
+
+
+
+<div class="message" style="text-align: center;">
+    <form method="POST">
+        <input type="text" name = 'message' placeholder="Введите сообщение">
+        <button type="submit">Отправить</button>
+    </form>
+</div>
+
+
+  
+<div>
+  {% for msg in messages %}
+  {%if 'Ты:' in msg%}
+    <p class= "user-msg"> {{ msg }}</p>
+  {%else%}
+    <p class="bot-msg">{{ msg }}</p>
+  {%endif%}
+  {% endfor %}
+</div>
+
+
+
+</div>
+
+</body>
+</html>
